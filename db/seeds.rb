@@ -8,4 +8,11 @@
 15.times do
   rest = Restaurant.new(name: Faker::Restaurant.name , address: Faker::Address.full_address , category: %w(chinese italian japanese french belgian).sample)
   rest.save
+  2.times do
+    rev = Review.new(content: "review content random #{rand(100..500)}", rating: rand(1..5))
+    rev.restaurant = rest
+    rev.save!
+  end
 end
+
+

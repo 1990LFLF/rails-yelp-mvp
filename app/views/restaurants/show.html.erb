@@ -14,6 +14,23 @@
     </tr>
   </table>
 
+  <h2>Reviews</h2>
+
+  <%= link_to 'Add a new review', new_restaurant_review_path(@restaurant) %>
+
+  <table class="table">
+    <tr>
+      <th>Content</th>
+      <th>Rating</th>
+    </tr>
+    <% @restaurant.reviews.each do |review| %>
+    <tr>
+      <td><%= review.content %></td>
+      <td><%= review.rating %></td>
+    </tr>
+    <% end %>
+  </table>
+
   <p> <%= link_to 'All restaurants', restaurants_path %></p>
 
 </div>

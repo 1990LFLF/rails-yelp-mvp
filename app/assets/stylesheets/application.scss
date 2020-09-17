@@ -13,6 +13,38 @@
 @import "pages/index";
 
 body {
-  margin: 15px auto;
+  background-color: #FCF5E8;
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.navbar {
+  margin-bottom: 50px;
+  justify-content: flex-start;
+  grid-gap: 15px;
+  // background-size: cover;
+  padding: 10px 20px;
+  width: 100vw;
+}
+
+table {
   max-width: 800px;
+  margin: 0 auto;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.size {
+  height: 1000px;
+}
+
+.btn {
+  font-weight: bold;
+
 }

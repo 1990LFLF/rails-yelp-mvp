@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container size">
   <h1><%= @restaurant.name %></h1>
 
   <table class="table">
@@ -16,8 +16,6 @@
 
   <h2>Reviews</h2>
 
-  <%= link_to 'Add a new review', new_restaurant_review_path(@restaurant) %>
-
   <table class="table">
     <tr>
       <th>Content</th>
@@ -31,6 +29,23 @@
     <% end %>
   </table>
 
-  <p> <%= link_to 'All restaurants', restaurants_path %></p>
+<h3>Create a new review for <%= @restaurant.name %></h3>
+
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+
+  <div class="form-inputs">
+    <%= f.input :content %>
+    <%= f.input :rating, hint: 'Integer: 0 a 5' %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary"%>
+  </div>
+  <% end %>
 
 </div>
+
+
+
+
+
+
